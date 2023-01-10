@@ -62,6 +62,9 @@ model = tf.keras.Sequential([
 <li>
 <b>input</b> tf.keras.layers.Flatten - This layer transforms a 2-d array (matrix) into a 1-D array of 784 (28 x 28). Think of this layer as lining up the images from a square to one, long line. This layer doesn't learn anything; it simply reshapes the data.
 </li>
+<li>
+    <b>hidden</b> <mark>tf.keras.layers.Dense</mark> - A densely connected layer of 126 neurons. Each neuron (otherwise known as a node) takes input from all 784 nodes in the previous layer, weighting that input according to hidden parameters which will be learned during training, and outputs a single value to the next layer.
+</li>
 </ul>
   
 
