@@ -82,9 +82,9 @@ model.compile(optimizer='adam',
 ```
 
 <ul>
-<li>Loss function — An algorithm for measuring how far the model’s outputs are from the desired output. The goal of training is this measure’s loss.<li>
-<li>Optimizer — An algorithm for adjusting the inner parameters of the model to minimize loss.<li>
-<li>Metrics — Used to monitor the training and testing steps. The following example uses accuracy, the fraction of the images that are correctly classified:<li>
+<li>Loss function — An algorithm for measuring how far the model’s outputs are from the desired output. The goal of training is this measure’s loss.</li>
+<li>Optimizer — An algorithm for adjusting the inner parameters of the model to minimize loss.</li>
+<li>Metrics — Used to monitor the training and testing steps. The following example uses accuracy, the fraction of the images that are correctly classified:</li>
 </ul>
 
 ### *Training the Model:*
