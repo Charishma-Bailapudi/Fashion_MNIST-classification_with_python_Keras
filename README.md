@@ -63,13 +63,61 @@ model = tf.keras.Sequential([
 <b>input</b> tf.keras.layers.Flatten - This layer transforms a 2-d array (matrix) into a 1-D array of 784 (28 x 28). Think of this layer as lining up the images from a square to one, long line. This layer doesn't learn anything; it simply reshapes the data.
 </li>
 <li>
-    <b>hidden</b> <mark>tf.keras.layers.Dense</mark> - A densely connected layer of 126 neurons. Each neuron (otherwise known as a node) takes input from all 784 nodes in the previous layer, weighting that input according to hidden parameters which will be learned during training, and outputs a single value to the next layer.
+<b>hidden</b> tf.keras.layers.Dense- A densely connected layer of 128 neurons. Each neuron (otherwise known as a node) takes input from all 784 nodes in the previous layer, weighting that input according to hidden parameters which will be learned during training, and outputs a value to the next layer.
+</li>
+<li>
+<b>hidden</b> tf.keras.layers.Dense- A densely connected layer of 126 neurons. Each neuron (otherwise known as a node) takes input from all 128 nodes in the previous layer, weighting that input according to hidden parameters which will be learned during training, and outputs a single value to the next layer.
+</li>
+<li>
+<b>output</b> tf.keras.layers.Dense This is a 10 node softmax layer with each node representing a class of clothing. As in the previous layer, each node takes input from the 64 nodes in the layer before it, weights that input according to learned parameters, and then outputs a value in the form of [0, 1] which of course, represents the probability of of the image belonging to that class. The sum of all 10 nodes is 1.
 </li>
 </ul>
-  
+ 
+Before we finish the model, we need to compile it:<br>
+```
+#compile
+model.compile(optimizer='adam',
+              loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
+              metrics=['accuracy'])
+```
 
+<ul>
+<li>Loss function — An algorithm for measuring how far the model’s outputs are from the desired output. The goal of training is this measure’s loss.<li>
+<li>Optimizer — An algorithm for adjusting the inner parameters of the model to minimize loss.<li>
+<li>Metrics — Used to monitor the training and testing steps. The following example uses accuracy, the fraction of the images that are correctly classified:<li>
+</ul>
 
+### *Training the Model:*
+```
+model.fit(train_images, train_labels, epochs=10, batch_size=64, validation_split=0.1)
 
+```
+Training is performed by calling the model.fit method:<br>
+<ul>
+<li>Feed the training data to the model using train_dataset</li>
+<li>The model learns to associate images and labels.</li>
+<li>The epochs=5 parameter limits training to 10 full iterations of the training dataset, so a total of 10 * 60000 = 600000 examples.</li>
+<li>The batch_size=64 tells model.fit to use batches of 62 images and labels when updating the model variables.</li>
+</ul>
+And now, voila! Our model is undergoing training! <br>
 
+As you can see, the loss and accuracy metrics are clearly displayed. After running the 10th epoch, we can see that we have a loss of ~24% with our model being 90% accurate.
+
+*---------------------EPOCHS-----------*
+
+### *Model Visualization*
+Keras plot model is defined in tensorflow, a machine learning framework provided by Google. Basically, it is an open source that was used in the Tensorflow framework in conjunction with Python to implement the deep learning algorithm. It contains the optimization technique that was used to perform the complicated and mathematical operations. It is more scalable and will support multiple platforms.<br>
+
+```
+# FashionMNIST
+tf.keras.utils.plot_model(model, show_shapes=True, rankdir="LR")
+
+```
+###### parameters:
+<ul>
+<li><b>model</b>	     :    A Keras model instance</li>
+<li><b>show_shapes</b>	 :    whether to display shape information.</li>
+<li><b>rankdir</b>	     : rankdir argument passed to PyDot, a string specifying the format of the plot: 'TB' creates a vertical plot; 'LR' creates a horizontal plot.</li>
+<ul>
 
 
