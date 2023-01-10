@@ -66,7 +66,7 @@ model = tf.keras.Sequential([
 <b>hidden</b> tf.keras.layers.Dense- A densely connected layer of 128 neurons. Each neuron (otherwise known as a node) takes input from all 784 nodes in the previous layer, weighting that input according to hidden parameters which will be learned during training, and outputs a value to the next layer.
 </li>
 <li>
-<b>hidden</b> tf.keras.layers.Dense- A densely connected layer of 126 neurons. Each neuron (otherwise known as a node) takes input from all 128 nodes in the previous layer, weighting that input according to hidden parameters which will be learned during training, and outputs a single value to the next layer.
+<b>hidden</b> tf.keras.layers.Dense- A densely connected layer of 64 neurons. Each neuron (otherwise known as a node) takes input from all 128 nodes in the previous layer, weighting that input according to hidden parameters which will be learned during training, and outputs a single value to the next layer.
 </li>
 <li>
 <b>output</b> tf.keras.layers.Dense This is a 10 node softmax layer with each node representing a class of clothing. As in the previous layer, each node takes input from the 64 nodes in the layer before it, weights that input according to learned parameters, and then outputs a value in the form of [0, 1] which of course, represents the probability of of the image belonging to that class. The sum of all 10 nodes is 1.
