@@ -120,4 +120,4 @@ tf.keras.utils.plot_model(model, show_shapes=True, rankdir="LR")
 <li><b>rankdir</b>	     : rankdir argument passed to PyDot, a string specifying the format of the plot: 'TB' creates a vertical plot; 'LR' creates a horizontal plot.</li>
 <ul>
 
-
+But wait…. it’s still not over yet. What if your dream laundry machine made a mistake? What if 10% of all your clothes were classified incorrectly? What if I were to tell you that it’s possible for your machine to be able to classify your clothes with a 95+% accuracy? Welcome to the world of *Convolutions and Maxpooling.*
